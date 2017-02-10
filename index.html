@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='AdvisorApp'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Advisor App</title>
+  </head>
+  <body>
+    <h1>Advisor App</h1>
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/advisor/data.module.js"></script>
+    <script src="src/advisor/advisor-app.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <script src="src/advisor/advisor.controller.js"></script>
+    <script src="src/advisor/advisor-data.service.js"></script>
+
+  </body>
+</html>
