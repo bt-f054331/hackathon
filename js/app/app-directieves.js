@@ -8,8 +8,14 @@ angular.module('myApp', [])
     },
     controller: function ($scope, $element, $attrs, $state) {
       console.log(2);
-		$scope.test = function () {
-		$state.go('advise');
+		$scope.test = function (target) {
+      if ("My super" === target) {
+        $state.go('super');
+      } else if ("Loan" === target) {
+		    $state.go('advise');
+      } else {
+        $state.go('advise1');
+      }
 		};
     },
     template: '<div id="container" style="margin: 0 auto">not working</div>',
@@ -26,20 +32,26 @@ angular.module('myApp', [])
           text: 'Account Status, 2020'
         },
         tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage}%</b>',
-          percentageDecimals: 1
+          pointFormat: '<b>{point.percentage:.2f}%</b>',
+          percentageDecimals: false
         },
         plotOptions: {
           pie: {
             allowPointSelect: true,
             cursor: 'pointer',
             dataLabels: {
-              enabled: false
+              enabled: true,
+              color: '#000000',
+              connectorColor: '#000000',
+			  connectorWidth: 0,
+			  distance: 0,
+              formatter: function () {
+                return '<b>' + this.point.name + '</b>: ' + this.percentage.toFixed(2)  + ' %';
+              }
             },
 		    events:{
 				click: function (event) {
-					alert(event.point.name);
-					scope.test();
+					scope.test(event.point.name);
               // add your redirect code and u can get data using event.point
 				}
 			}
@@ -55,7 +67,7 @@ angular.module('myApp', [])
       scope.$watch("items", function (newValue) {
         chart.series[0].setData(newValue, true);
       }, true);
-      
+
     }
   }
 });

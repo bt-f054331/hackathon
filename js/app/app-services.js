@@ -6,11 +6,11 @@ wealthServices.factory( 'wpUtilService', [
 
 
         var openModal = function ( modalId ) {
-            GUI.modals.toggelModal( false, $( modalId ), modalId );            
+            GUI.modals.toggelModal( false, $( modalId ), modalId );
         };
-		
+
 		var closeModal = function ( modalId) {
-            GUI.modals.toggelModal( true, $( modalId ), modalId );            
+            GUI.modals.toggelModal( true, $( modalId ), modalId );
         };
 
 
@@ -19,7 +19,7 @@ wealthServices.factory( 'wpUtilService', [
             return re.test( email );
         };
 
-        
+
         var slideToFields = function ( id ) {
             $( window ).scrollTop( 0 );
             var timeout = $timeout( function () {
@@ -34,12 +34,24 @@ wealthServices.factory( 'wpUtilService', [
             } );
         };
 
-        
+        var matcher = function(val, keys) {
+          var target = "";
+          for (var i = 0; i < keys.length; i++) {
+            var regex= new RegExp(keys[i].trim(), 'i');
+            var result = val.match(regex);
+            if (result !== null && result.length > 0) {
+              target = result[0];
+            }
+          }
+          return target;
+        };
+
         return {
             slideTop : slideTop,
             slideToFields : slideToFields,
             openModal : openModal,
-            closeModal : closeModal
+            closeModal : closeModal,
+            matcher : matcher
         };
     }
 ] );

@@ -4,7 +4,7 @@ var wealthRouter = angular.module( 'wealthRouter', [
 ] );
 
 wealthRouter.config( [
-    '$stateProvider', '$urlRouterProvider', function ( $stateProvider, $urlRouterProvider ) {        
+    '$stateProvider', '$urlRouterProvider', function ( $stateProvider, $urlRouterProvider ) {
         var header = {
             templateUrl : 'view/common/header.html'
         };
@@ -21,6 +21,15 @@ wealthRouter.config( [
                 },
                 footer : footer
             }
+          } ).state( 'super', {
+              url : '/super',
+              views : {
+                  header : header,
+                  body : {
+                      templateUrl : 'view/super.html'
+                  },
+                  footer : footer
+              }
         } ).state( 'advise', {
             url : '/advise',
             views : {
