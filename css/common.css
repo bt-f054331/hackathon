@@ -1,0 +1,249 @@
+* {
+	font-family: "Helvetica Neue",roboto,Arial,sans-serif !important;
+	margin: 0px;
+	padding: 0px;
+	font-weight:300;
+	-webkit-font-smoothing: antialiased;
+    outline: none;
+}
+a {
+	cursor: pointer;
+}
+/* ---css for header part----*/
+.back {
+	transform:rotate(135deg);
+	-ms-transform:rotate(135deg);
+	-webkit-transform:rotate(135deg);
+	border-style: solid;
+    border-color: #fff #575F65 #575F65 #fff;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.header-dt {
+	height: 66px;
+    margin: 0px;
+    border-bottom: 1px solid #d7d2cb;
+    background: #fff;
+}
+.bt-logo-header .wbc-logo {
+	padding: 0px;
+	text-align: left;
+}
+.bt-logo-header .wbc-logo span {
+    margin-left: 25px;
+}
+.bt-logo-header .bt-logo {
+	padding: 20px 12px 0px 12px;;
+	text-align: right;
+}
+.bt-logo-header .bt-logo .symbol-bt-logo {
+    height: 30px;
+}
+.bt-logo-header .bt-logo .btn-signout {
+	margin-left: 12px;
+	margin-top: -20px;
+}
+.back-btn-box {
+	height: 40px;
+    border-right: 1px solid #ddd;
+    margin-top: 11px;
+    text-align: center;
+    vertical-align: middle;
+}
+.btn-signout-box {
+	float: right;
+	margin: 15px 0px;
+}
+.bt-logo-header .sr-only {
+    width: 200px;
+    height: 50px;
+    top: 9px;
+}
+.bt-logo-header .bt-logo .symbol-bt-logo .sr-only {
+    right: 15px;
+    width: 100px;
+    height: 55px;
+}
+/*--- end header ---*/
+
+/*----------footer css ----*/
+.footer {
+	background-color: #fff;
+	width: 100%;
+	padding: 19px 12px;
+	border-top: 1px solid #d7d2cb;
+	border-bottom: 1px solid #d7d2cb;
+}
+.footer .footer-left {
+	vertical-align: top;
+}
+.footer .footer-right {
+	vertical-align: top;
+	display: inline-block;
+    padding-left: 12px;
+    width: 85%;
+}
+/*----------footer css ----*/
+
+
+/*---- css for content ----*/
+.btn-signout-block .btn.btn-sm {
+	padding-top: 0px !important;
+}
+
+.btn-search .btn.btn-xl {
+    padding: 0px 14px 2px 14px;
+}
+
+/* ---- loader ---- */
+.loader {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	display: none;
+    background: #FFFFFF;
+}
+
+.main-loader.loader {
+	top: 0px;
+}
+
+.loader.active {
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+	z-index: 1;
+}
+.icon-loading-inverse::after {
+	background-image: none;
+}
+.loader-container {
+	position: absolute;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    top: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+  	-webkit-transform: translate(-50%,-50%);
+  	transform: translate(-50%,-50%);
+    height: 100px;
+}
+.loader .splash {
+	margin: auto;
+}
+
+.loader .loader-container .splash {
+	margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+.loader-container .splash-content {
+    font-size: 18px;
+    position: relative;
+    top: 10%;
+}
+.loader-container .splash-content p {
+	text-align: center;
+}
+.modal-content .loader .splash {
+	top: 45%;
+}
+.loader .splash .icon-loading-inverse {
+	height: 32px;
+	width: 32px;
+}
+.well{
+	margin: 18px;
+	background:#fff;
+}
+
+
+/* ---- End loader ---- */
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 420px) {
+    
+}
+/* loader keyframes*/
+.icon-loading-inverse {
+    animation: iconloadinginverse 1.2s ease-out;
+    -webkit-animation: iconloadinginverse 1.2s ease-out;
+    -ms-animation: iconloadinginverse 1.2s ease-out;
+    animation-iteration-count: infinite;    
+    -webkit-animation-iteration-count:infinite;
+}
+@-webkit-keyframes iconloadinginverse {
+    0% {
+		opacity:1;
+		border-color:#000;
+		-webkit-transform: scale(.1);  
+		opacity:0;
+	}
+	50% {
+		opacity:1;
+	}
+	100% {
+		opacity:1;
+		border-color:#000;
+		-webkit-transform: scale(1);  
+		opacity:0;
+		
+	}
+} 
+@-ms-keyframes iconloadinginverse {
+   0% {
+		opacity:1;
+		border-color:#000;  
+      	-ms-transform: scale(.1);  
+		opacity:0;
+	}
+	50% {
+		opacity:1;
+	}
+	100% {
+		opacity:1;
+		border-color:#000;
+      	-ms-transform: scale(1);  
+		opacity:0;
+	}
+}
+@keyframes iconloadinginverse {
+	0% {
+		opacity:1;
+		border-color:#000;
+		transform:scale(.1);
+		-webkit-transform: scale(.1);  
+      	-ms-transform: scale(.1); 
+		opacity:0;
+	}
+	50% {
+		opacity:1;
+	}
+	100% {
+		opacity:1;
+		border-color:#000;
+		transform:scale(1);		
+		-webkit-transform: scale(1);  
+      	-ms-transform: scale(1);  
+		opacity:0;
+	}
+}
+/* end loader key frames */
