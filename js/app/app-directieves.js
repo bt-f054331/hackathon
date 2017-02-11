@@ -38,6 +38,7 @@ angular.module('myApp', [])
               color: '#000000',
               connectorColor: '#000000',
 			  connectorWidth: 0,
+			  distance: 0,
               formatter: function () {
                 return '<b>' + this.point.name + '</b>: ' + this.percentage.toFixed(2)  + ' %';
               }
