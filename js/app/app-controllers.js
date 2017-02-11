@@ -1,6 +1,6 @@
 'use strict'
 var wealthControllers = angular.module( 'wealthControllers', [
-    'wealthDataServices', 'wealthServices', 'wealthConstants','myApp'
+    'wealthDataServices', 'wealthServices', 'wealthConstants','wealthDirectieves'
 ] );
 wealthControllers.controller( 'wpAppController', wpAppController );
 wealthControllers.controller( 'overviewController', overviewController );
