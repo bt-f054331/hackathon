@@ -26,15 +26,21 @@ angular.module('myApp', [])
           text: 'Account Status, 2020'
         },
         tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage}%</b>',
-          percentageDecimals: 1
+          pointFormat: '<b>{point.percentage:.2f}%</b>',
+          percentageDecimals: false
         },
         plotOptions: {
           pie: {
             allowPointSelect: true,
             cursor: 'pointer',
             dataLabels: {
-              enabled: false
+              enabled: true,
+              color: '#000000',
+              connectorColor: '#000000',
+			  connectorWidth: 0,
+              formatter: function () {
+                return '<b>' + this.point.name + '</b>: ' + this.percentage.toFixed(2)  + ' %';
+              }
             },
 		    events:{
 				click: function (event) {

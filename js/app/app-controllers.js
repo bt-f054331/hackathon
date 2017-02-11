@@ -16,11 +16,18 @@ modalController.$inject = [
 ];
 
 
+// controller for Super screens
+wealthControllers.controller( 'wpSuperController', wpSuperController );
+wpSuperController.$inject = [
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+];
+
+
 // Functions for all controllers
 function wpAppController ( $scope, $rootScope, $state, $location, $window, $timeout, wpDataService, wpUtilService, appconfig ) {
     var self = this;
 	$rootScope.stateIsLoading = false;
-	  $scope.ideas = [
+	self.ideas = [
     ['My Bank Balance', 70000],
     ['My super', 20000],
     ['Insurance', 5000],
@@ -28,6 +35,9 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
 	['Loan', 50000]
   ];
 }
+
+
+
 
 function modalController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
     
