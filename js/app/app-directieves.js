@@ -8,8 +8,14 @@ angular.module('myApp', [])
     },
     controller: function ($scope, $element, $attrs, $state) {
       console.log(2);
-		$scope.test = function () {
-		$state.go('advise');
+		$scope.test = function (target) {
+      if ("My super" === target) {
+        $state.go('super');
+      } else if ("Loan" === target) {
+		    $state.go('advise');
+      } else {
+        $state.go('advise1');
+      }
 		};
     },
     template: '<div id="container" style="margin: 0 auto">not working</div>',
@@ -38,8 +44,7 @@ angular.module('myApp', [])
             },
 		    events:{
 				click: function (event) {
-					alert(event.point.name);
-					scope.test();
+					scope.test(event.point.name);
               // add your redirect code and u can get data using event.point
 				}
 			}
@@ -55,7 +60,7 @@ angular.module('myApp', [])
       scope.$watch("items", function (newValue) {
         chart.series[0].setData(newValue, true);
       }, true);
-      
+
     }
   }
 });
