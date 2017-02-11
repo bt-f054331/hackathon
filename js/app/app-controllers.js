@@ -38,7 +38,6 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
     var self = this;
     self.items = ['super'],['loan'];
 
-
     self.execute = function(val, keys) {
       var target = wpUtilService.matcher(val, keys);
       self.navigate(target);
@@ -55,5 +54,14 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         }
     }
 
+    var commands = {
+      '*val' : function(val) {
+        self.execute(val, self.items);
+      }
+    }
+
+    annyang.addCommands(commands);
+    annyang.debug();
+    annyang.start();
 
 }
