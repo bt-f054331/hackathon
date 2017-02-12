@@ -1,5 +1,6 @@
-<div class="well">
-	<div class="hc-pie" items="wpParent.ideas"></div>
+<div class="well" ng-controller="overviewController as overview">
+	<div class="hc-pie hidden-xs" items="wpParent.ideas"></div>
+	<div class="hc-pie-mobile hidden-sm hidden-md hidden-lg" items="wpParent.ideas"></div>
 	<a ui-sref="advise">advise</a><br/>
 	<a ui-sref="advise1">advise1</a>
 </div>

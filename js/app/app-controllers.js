@@ -1,29 +1,15 @@
 'use strict'
 var wealthControllers = angular.module( 'wealthControllers', [
-    'wealthDataServices', 'wealthServices', 'wealthConstants','myApp'
+    'wealthDataServices', 'wealthServices', 'wealthConstants','wealthDirectieves'
 ] );
-
-// controller for wpAppController Page
 wealthControllers.controller( 'wpAppController', wpAppController );
+wealthControllers.controller( 'overviewController', overviewController );
+wealthControllers.controller( 'modalController', modalController );
+
+
 wpAppController.$inject = [
     '$scope', '$rootScope', '$state', '$location', '$window', '$timeout', 'wpDataService', 'wpUtilService', 'appconfig'
 ];
-
-// controller for Modal screens
-wealthControllers.controller( 'modalController', modalController );
-modalController.$inject = [
-    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
-];
-
-
-// controller for Super screens
-wealthControllers.controller( 'wpSuperController', wpSuperController );
-wpSuperController.$inject = [
-    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
-];
-
-
-// Functions for all controllers
 function wpAppController ( $scope, $rootScope, $state, $location, $window, $timeout, wpDataService, wpUtilService, appconfig ) {
     var self = this;
 	$rootScope.stateIsLoading = false;
@@ -34,13 +20,48 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
 	['Term deposit', 2000],
 	['Loan', 50000]
   ];
+
 }
 
-
-
+modalController.$inject = [
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+];
 
 function modalController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
-    
+
 }
 
+overviewController.$inject = [
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+];
+function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
+    var self = this;
+    self.items = ['super'],['loan'];
 
+    self.execute = function(val, keys) {
+      var target = wpUtilService.matcher(val, keys);
+      self.navigate(target);
+    }
+
+    self.navigate = function(target) {
+        annyang.removeCommands();
+        if ('super' === target) {
+          $state.go('super');
+        } else if ('loan' === target) {
+  		    $state.go('advise');
+        } else {
+          $state.go('advise1');
+        }
+    }
+
+    var commands = {
+      '*val' : function(val) {
+        self.execute(val, self.items);
+      }
+    }
+
+    annyang.addCommands(commands);
+    annyang.debug();
+    annyang.start();
+
+}
