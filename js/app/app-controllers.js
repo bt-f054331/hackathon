@@ -41,16 +41,22 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
     var self = this;
     self.items = ['super'],['loan'];
     self.theText = "Hi Melinda how can I help you?";
-	
+
 	self.sayIt = wpUtilService.sayIt;
-    
-    self.execute = function(val, keys) {
-      var target = wpUtilService.matcher(val, keys);
+
+    self.execute = function(vals, keys) {
+      var target = "";
+      for (var i = 0; i < vals.length; i++) {
+        target = wpUtilService.matcher(vals[i], keys);
+        if (target !== null) {
+          break;
+        }
+      }
       self.navigate(target);
     }
 
     self.navigate = function(target) {
-        annyang.removeCommands();
+        annyang.pause();
         if ('super' === target) {
           $state.go('super');
         } else if ('loan' === target) {
@@ -60,16 +66,15 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         }
     }
 
-    var commands = {
-      '*val' : function(val) {
-        self.execute(val, self.items);
-      }
-    }
-	self.sayIt(self.theText);
-    annyang.addCommands(commands);
+	  self.sayIt(self.theText);
+
     annyang.debug();
     annyang.start();
 
+    annyang.addCallback('result', function(phrases) {
+      console.log("it could be any of the following: ", phrases);
+      self.execute(phrases, self.items);
+    });
 }
 
 superController.$inject = [
@@ -79,7 +84,37 @@ superController.$inject = [
 function superController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
 	console.log($rootScope.questions);
 	var self = this;
+  self.q2Enabled = false;
+  self.q1Ans = "nope";
+  self.q2Ans = "";
+  self.q1PosAns = $rootScope.questions.Page1.q1.pAnswers;
+  self.q1NegAns = $rootScope.questions.Page1.q1.nAnswers;
 	self.sayIt = wpUtilService.sayIt;
 	self.questions = $rootScope.questions;
 	self.sayIt($rootScope.questions.Page1.q1.voice);
+  annyang.resume();
+
+  self.execute = function(vals, keys) {
+    var target = "";
+    for (var i = 0; i < vals.length; i++) {
+      target = wpUtilService.matcher(vals[i], keys);
+      if (target !== null || target !== "") {
+        break;
+      }
+    }
+    if (target === null || target === "") {
+      target = vals[0];
+      self.q2Enabled=true;
+    }
+    self.q1Ans = target;
+    $scope.$apply();
+  }
+
+
+  annyang.addCallback('result', function(phrases) {
+    console.log("it could be any of the following: ", phrases);
+    self.execute(phrases, self.q1PosAns);
+  });
+
+
 }

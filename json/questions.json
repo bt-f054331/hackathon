@@ -1,22 +1,16 @@
 {
 	"Page1" : {
 		"q1" : {
-			"text" : "how are you doing today?",
-			"voice" : "how are you doing today?",
-			"pAnswers" : ["good","not good","cancer"],
-			"nAnswers" : ["good","not good","cancer"]			
+			"text" : "how is your health?",
+			"voice" : "how is your health?",
+			"pAnswers" : ["good"],
+			"nAnswers" : ["not good","cancer"]
 		},
 		"q2" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
-			"pAnswers" : ["good","not good","cancer"],
-			"nAnswers" : ["good","not good","cancer"]
-		},
-		"q3" : {
-			"text" : "what is the status now?",
-			"voice" : "what is the status now?",
-			"pAnswers" : ["good","not good","cancer"],
-			"nAnswers" : ["good","not good","cancer"]
+			"pAnswers" : ["good","improving","improved", "better"],
+			"nAnswers" : ["bad", "not good","cancer"]
 		}
 	},
 	"Page2" : {
@@ -40,26 +34,6 @@
 		}
 	},
 	"Page3" : {
-		"q1" : {
-			"text" : "how are you?",
-			"voice" : "how are you?",
-			"pAnswers" : ["good","not good","cancer"],
-			"nAnswers" : ["good","not good","cancer"]
-		},
-		"q2" : {
-			"text" : "what is the status now?",
-			"voice" : "what is the status now?",
-			"pAnswers" : ["good","not good","cancer"],
-			"nAnswers" : ["good","not good","cancer"]
-		},
-		"q3" : {
-			"text" : "what is the status now?",
-			"voice" : "what is the status now?",
-			"pAnswers" : ["good","not good","cancer"],
-			"nAnswers" : ["good","not good","cancer"]
-		}
-	},
-	"Page4" : {
 		"q1" : {
 			"text" : "how are you?",
 			"voice" : "how are you?",

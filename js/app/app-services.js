@@ -33,7 +33,7 @@ wealthServices.factory( 'wpUtilService', [
                 'scrollTop' : $( '#' + itemId ).offset().top
             } );
         };
-		
+
 		var sayIt = function (text) {
 			window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 		};
@@ -45,6 +45,7 @@ wealthServices.factory( 'wpUtilService', [
             var result = val.match(regex);
             if (result !== null && result.length > 0) {
               target = result[0];
+              break;
             }
           }
           return target;
@@ -55,7 +56,7 @@ wealthServices.factory( 'wpUtilService', [
             slideToFields : slideToFields,
             openModal : openModal,
             closeModal : closeModal,
-            matcher : matcher, 
+            matcher : matcher,
 			sayIt : sayIt
         };
     }
