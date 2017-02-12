@@ -39,8 +39,8 @@ wealthServices.factory( 'wpUtilService', [
 
           speechMessage.onstart = function(e) {
             console.log('start speaking');
-            annyang.pause();
-            console.log('annyang pause');
+            annyang.abort();
+            console.log('annyang abort');
           };
 
           speechMessage.onend = function(e) {
@@ -48,7 +48,7 @@ wealthServices.factory( 'wpUtilService', [
             annyang.resume();
             console.log('annyang resumed');
           };
-          window.speechSynthesis.speak(speechMessage);
+          speechSynthesis.speak(speechMessage);
     		};
 
         var matcher = function(val, keys) {
@@ -70,7 +70,7 @@ wealthServices.factory( 'wpUtilService', [
             openModal : openModal,
             closeModal : closeModal,
             matcher : matcher,
-			sayIt : sayIt
+			      sayIt : sayIt
         };
     }
 ] );

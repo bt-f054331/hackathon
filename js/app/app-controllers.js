@@ -21,6 +21,9 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
 	['Loan', 50000]
   ];
 
+  annyang.debug();
+  annyang.start();
+
   wpDataService.getDataService( appconfig.service.questions ).then( function ( data ) {
         $rootScope.questions = data;
   } );
@@ -41,16 +44,11 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
     var self = this;
     self.items = $rootScope.questions.Landing.q1.pAnswers;
     self.theText = $rootScope.questions.Landing.q1.voice;
-    wpUtilService.sayIt(self.theText);
-
-    annyang.debug();
-    annyang.start();
 
     annyang.addCallback('result', function(phrases) {
       console.log("it could be any of the following: ", phrases);
       self.execute(phrases, self.items);
     });
-
 
     self.execute = function(vals, keys) {
       var target = "";
@@ -61,7 +59,6 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         }
       }
       self.navigate(target);
-      annyang.removeCallback();
     }
 
     self.navigate = function(target) {
@@ -74,6 +71,7 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
           $state.go('advise1');
         }
     }
+
 }
 
 superController.$inject = [

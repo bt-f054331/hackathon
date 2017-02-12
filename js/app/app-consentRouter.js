@@ -20,6 +20,9 @@ wealthRouter.config( [
                     templateUrl : 'view/home.html'
                 },
                 footer : footer
+            },
+            onExit: function() {
+              annyang.removeCallback();
             }
           } ).state( 'super', {
               url : '/super',
@@ -29,6 +32,9 @@ wealthRouter.config( [
                       templateUrl : 'view/super.html'
                   },
                   footer : footer
+              },
+              onExit: function() {
+                annyang.removeCallback();
               }
         } ).state( 'advise', {
             url : '/advise',
@@ -47,6 +53,9 @@ wealthRouter.config( [
                     templateUrl : 'view/financeAdvise1.html'
                 },
                 footer : footer
+            },
+            onExit: function() {
+              annyang.removeCallback();
             }
         } );
     }

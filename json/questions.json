@@ -11,8 +11,8 @@
 		"q1" : {
 			"text" : "how is your health?",
 			"voice" : "how is your health?",
-			"pAnswers" : ["good"],
-			"nAnswers" : ["not good","cancer"]
+			"pAnswers" : ["good", "not bad"],
+			"nAnswers" : ["not good", "cancer", "bad"]
 		},
 		"q2" : {
 			"text" : "what is the status now?",
