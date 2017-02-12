@@ -21,6 +21,10 @@ wealthRouter.config( [
                 },
                 footer : footer
             },
+            onEnter: function(){
+                annyang.debug();
+                annyang.start();
+            },
             onExit: function() {
               annyang.removeCallback();
             }

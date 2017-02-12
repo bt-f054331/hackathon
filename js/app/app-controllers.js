@@ -21,9 +21,6 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
 	['Loan', 50000]
   ];
 
-  annyang.debug();
-  annyang.start();
-
   wpDataService.getDataService( appconfig.service.questions ).then( function ( data ) {
         $rootScope.questions = data;
   } );
