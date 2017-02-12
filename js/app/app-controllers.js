@@ -81,5 +81,5 @@ function superController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
 	var self = this;
 	self.sayIt = wpUtilService.sayIt;
 	self.questions = $rootScope.questions;
-	self.sayIt($rootScope.questions.Page1.q1.text);
+	self.sayIt($rootScope.questions.Page1.q1.voice);
 }
