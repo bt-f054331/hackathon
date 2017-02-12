@@ -111,18 +111,7 @@ angular.module('wealthDirectieves', [])
             allowPointSelect: true,
             cursor: 'pointer',
             dataLabels: {
-<<<<<<< HEAD
-              enabled: true,
-              color: '#000000',
-              connectorColor: '#000000',
-			  connectorWidth: 0,
-			  distance: 0,
-              formatter: function () {
-                return '<b>' + this.point.name + '</b>: ' + this.percentage.toFixed(2)  + ' %';
-              }
-=======
               enabled: false
->>>>>>> f08bd76... added mobile view of highchart without label
             },
 		    events:{
 				click: function (event) {
@@ -145,8 +134,4 @@ angular.module('wealthDirectieves', [])
 
     }
   }
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> f08bd76... added mobile view of highchart without label
