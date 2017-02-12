@@ -1,11 +1,11 @@
 'use strict'
 var wealthControllers = angular.module( 'wealthControllers', [
-    'wealthDataServices', 'wealthServices', 'wealthConstants','wealthDirectieves'
+    'wealthDataServices', 'wealthServices', 'wealthConstants','wealthDirectieves', 'pubnub.angular.service'
 ] );
 wealthControllers.controller( 'wpAppController', wpAppController );
 wealthControllers.controller( 'overviewController', overviewController );
 wealthControllers.controller( 'modalController', modalController );
-
+wealthControllers.controller( 'superController', superController );
 
 wpAppController.$inject = [
     '$scope', '$rootScope', '$state', '$location', '$window', '$timeout', 'wpDataService', 'wpUtilService', 'appconfig'
@@ -21,6 +21,9 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
 	['Loan', 50000]
   ];
 
+  wpDataService.getDataService( appconfig.service.questions ).then( function ( data ) {
+        $rootScope.questions = data;
+  } );
 }
 
 modalController.$inject = [
@@ -32,12 +35,15 @@ function modalController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
 }
 
 overviewController.$inject = [
-    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig', 'Pubnub'
 ];
-function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
+function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig, Pubnub) {
     var self = this;
     self.items = ['super'],['loan'];
-
+    self.theText = "Hi Melinda how can I help you?";
+	
+	self.sayIt = wpUtilService.sayIt;
+    
     self.execute = function(val, keys) {
       var target = wpUtilService.matcher(val, keys);
       self.navigate(target);
@@ -59,9 +65,21 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         self.execute(val, self.items);
       }
     }
-
+	self.sayIt(self.theText);
     annyang.addCommands(commands);
     annyang.debug();
     annyang.start();
 
+}
+
+superController.$inject = [
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+];
+
+function superController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
+	console.log($rootScope.questions);
+	var self = this;
+	self.sayIt = wpUtilService.sayIt;
+	self.questions = $rootScope.questions;
+	self.sayIt($rootScope.questions.Page1.q1.text);
 }
