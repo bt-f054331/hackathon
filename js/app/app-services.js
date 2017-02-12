@@ -35,8 +35,13 @@ wealthServices.factory( 'wpUtilService', [
         };
 
     		var sayIt = function (text) {
-          annyang.pause();
           var speechMessage = new SpeechSynthesisUtterance(text);
+
+          speechMessage.onstart = function(e) {
+            console.log('start speaking');
+            annyang.pause();
+            console.log('annyang pause');
+          };
 
           speechMessage.onend = function(e) {
             console.log('Finished speaking');

@@ -1,4 +1,12 @@
 {
+	"Landing" : {
+		"q1" : {
+			"text" : "Hi Melinda, How are you?",
+			"voice" : "Hi Melinda, How can I help you today?",
+			"pAnswers" : ["super", "loan", "balance"],
+			"nAnswers" : []
+		}
+	},
 	"Page1" : {
 		"q1" : {
 			"text" : "how is your health?",
@@ -9,7 +17,7 @@
 		"q2" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
-			"pAnswers" : ["good","improving","improved", "better"],
+			"pAnswers" : ["good","improving","improved", "better", "Ok", "Okay", "clear"],
 			"nAnswers" : ["bad", "not good","cancer"]
 		}
 	},

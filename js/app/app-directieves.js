@@ -1,4 +1,4 @@
-angular.module('wealthDirectieves', [])
+angular.module('chartDirectives', [])
   .directive('hcPie', function () {
   return {
     restrict: 'C',
