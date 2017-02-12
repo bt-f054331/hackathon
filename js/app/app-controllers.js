@@ -53,6 +53,7 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         }
       }
       self.navigate(target);
+      annyang.removeCallback();
     }
 
     self.navigate = function(target) {
@@ -66,8 +67,6 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         }
     }
 
-	  self.sayIt(self.theText);
-
     annyang.debug();
     annyang.start();
 
@@ -75,6 +74,8 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
       console.log("it could be any of the following: ", phrases);
       self.execute(phrases, self.items);
     });
+
+    self.sayIt(self.theText);
 }
 
 superController.$inject = [
@@ -85,14 +86,14 @@ function superController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
 	console.log($rootScope.questions);
 	var self = this;
   self.q2Enabled = false;
-  self.q1Ans = "nope";
+  self.q1Ans = "";
   self.q2Ans = "";
   self.q1PosAns = $rootScope.questions.Page1.q1.pAnswers;
   self.q1NegAns = $rootScope.questions.Page1.q1.nAnswers;
 	self.sayIt = wpUtilService.sayIt;
 	self.questions = $rootScope.questions;
 	self.sayIt($rootScope.questions.Page1.q1.voice);
-  annyang.resume();
+
 
   self.execute = function(vals, keys) {
     var target = "";
@@ -113,7 +114,11 @@ function superController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
 
   annyang.addCallback('result', function(phrases) {
     console.log("it could be any of the following: ", phrases);
-    self.execute(phrases, self.q1PosAns);
+    if (self.p2Enabled) {
+      self.execute(phrases, self.q2PosAns);
+    } else {
+      self.execute(phrases, self.q1PosAns);
+    }
   });
 
 

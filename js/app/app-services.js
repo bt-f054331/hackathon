@@ -34,9 +34,17 @@ wealthServices.factory( 'wpUtilService', [
             } );
         };
 
-		var sayIt = function (text) {
-			window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-		};
+    		var sayIt = function (text) {
+          annyang.pause();
+          var speechMessage = new SpeechSynthesisUtterance(text);
+
+          speechMessage.onend = function(e) {
+            console.log('Finished speaking');
+            annyang.resume();
+            console.log('annyang resumed');
+          };
+          window.speechSynthesis.speak(speechMessage);
+    		};
 
         var matcher = function(val, keys) {
           var target = "";
