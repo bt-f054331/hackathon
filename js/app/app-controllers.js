@@ -1,6 +1,6 @@
 'use strict'
 var wealthControllers = angular.module( 'wealthControllers', [
-    'wealthDataServices', 'wealthServices', 'wealthConstants','wealthDirectieves'
+    'wealthDataServices', 'wealthServices', 'wealthConstants','wealthDirectieves', 'pubnub.angular.service'
 ] );
 wealthControllers.controller( 'wpAppController', wpAppController );
 wealthControllers.controller( 'overviewController', overviewController );
@@ -32,12 +32,15 @@ function modalController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
 }
 
 overviewController.$inject = [
-    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig', 'Pubnub'
 ];
-function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
+function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig, Pubnub) {
     var self = this;
     self.items = ['super'],['loan'];
-
+    self.theText = "Hi Melinda how can I help you?";
+    self.sayIt = function () {
+        window.speechSynthesis.speak(new SpeechSynthesisUtterance(self.theText));
+    };
     self.execute = function(val, keys) {
       var target = wpUtilService.matcher(val, keys);
       self.navigate(target);
@@ -59,7 +62,7 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
         self.execute(val, self.items);
       }
     }
-
+    self.sayIt();
     annyang.addCommands(commands);
     annyang.debug();
     annyang.start();
