@@ -24,6 +24,9 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
   wpDataService.getDataService( appconfig.service.questions ).then( function ( data ) {
         $rootScope.questions = data;
   } );
+   self.goToAdvisor = function () {
+		$state.go('advisor');
+   };
 }
 
 modalController.$inject = [

@@ -176,7 +176,15 @@ a {
 .well textarea {
 	width: 100%;
 }
-
+.wlive-container,.wlive-link {
+	margin: 18px;
+}
+.wlive-link {
+	cursor: pointer;
+}
+.wlive-upper-border {
+	border-top: 1px solid #ddd;
+}
 /* ---- End loader ---- */
 @media only screen and (max-width: 768px) {
     

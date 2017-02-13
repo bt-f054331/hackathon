@@ -17,18 +17,27 @@ wealthRouter.config( [
             views : {
                 header : header,
                 body : {
-                    templateUrl : 'view/home.html'
+                    templateUrl : 'view/wlive.html'
                 },
                 footer : footer
-            },
-            onEnter: function(){
+            }
+          } ).state( 'advisor', {
+              url : '/advisor',
+              views : {
+                  header : header,
+                  body : {
+                      templateUrl : 'view/home.html'
+                  },
+                  footer : footer
+              },
+			  onEnter: function(){
                 annyang.debug();
                 annyang.start();
-            },
-            onExit: function() {
-              annyang.removeCallback();
-            }
-          } ).state( 'super', {
+			  },
+              onExit: function() {
+                annyang.removeCallback();
+              }
+        } ).state( 'super', {
               url : '/super',
               views : {
                   header : header,
