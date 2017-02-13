@@ -38,6 +38,8 @@ function wliveController ( $scope, $rootScope, $state, $stateParams ) {
    self.goToAdvisor = function () {
      if (journey === 'j1') {
     		$state.go('advisor');
+      } else if (journey === 'demo') {
+         $state.go('demo', {target: 'demo'});
      } else {
        	$state.go('super');
      }
