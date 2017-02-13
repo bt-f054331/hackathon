@@ -30,13 +30,29 @@ wealthRouter.config( [
                   },
                   footer : footer
               },
-			  onEnter: function(){
+			        onEnter: function(){
                 annyang.debug();
                 annyang.start();
-			  },
+			        },
               onExit: function() {
                 annyang.removeCallback();
               }
+          } ).state( 'j1', {
+                url : '/wlive/:target',
+                views : {
+                    header : header,
+                    body : {
+                        templateUrl : 'view/wlive.html'
+                    },
+                    footer : footer
+                },
+  			        onEnter: function(){
+                  annyang.debug();
+                  annyang.start();
+  			        },
+                onExit: function() {
+                  annyang.removeCallback();
+                }
         } ).state( 'super', {
               url : '/super',
               views : {

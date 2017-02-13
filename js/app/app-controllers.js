@@ -6,11 +6,12 @@ wealthControllers.controller( 'wpAppController', wpAppController );
 wealthControllers.controller( 'overviewController', overviewController );
 wealthControllers.controller( 'modalController', modalController );
 wealthControllers.controller( 'superController', superController );
+wealthControllers.controller( 'wliveController', wliveController );
 
 wpAppController.$inject = [
     '$scope', '$rootScope', '$state', '$location', '$window', '$timeout', 'wpDataService', 'wpUtilService', 'appconfig'
 ];
-function wpAppController ( $scope, $rootScope, $state, $location, $window, $timeout, wpDataService, wpUtilService, appconfig ) {
+function wpAppController ( $scope, $rootScope, $state, $location, $window, $timeout, wpDataService, wpUtilService, appconfig) {
     var self = this;
 	$rootScope.stateIsLoading = false;
 	self.ideas = [
@@ -24,10 +25,25 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
   wpDataService.getDataService( appconfig.service.questions ).then( function ( data ) {
         $rootScope.questions = data;
   } );
+
+}
+
+wliveController.$inject = [
+    '$scope', '$rootScope', '$state', '$stateParams'
+];
+function wliveController ( $scope, $rootScope, $state, $stateParams ) {
+    var self = this;
+    var journey = $stateParams.target;
+
    self.goToAdvisor = function () {
-		$state.go('advisor');
+     if (journey === 'j1') {
+    		$state.go('advisor');
+     } else {
+       	$state.go('super');
+     }
    };
 }
+
 
 modalController.$inject = [
     '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
