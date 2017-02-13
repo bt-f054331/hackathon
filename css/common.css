@@ -215,10 +215,47 @@ a {
 	top: 3px;
 	left:0px;
 }
-
 .mic-with-text {
 	position: relative;
 }
+.chat-box {
+	margin-bottom: 18px;
+}
+.chat-box div{
+	clear: both;
+}
+
+.left-chat-box {
+	margin: 18px 18px 0px 18px;
+    width: 70%;
+    background-color: #fff;
+    border: 1px solid #D7D2CB;
+    border-radius: 3px;
+    padding: 12px 6px 6px 12px;
+	float: left;
+	position: relative;
+}
+
+.right-chat-box {
+	margin: 18px 18px 0px 18px;
+    width: 70%;
+    background-color: #f2f8fc;
+    border: 1px solid #80bae2;
+    border-radius: 3px;
+    padding: 12px 6px 6px 12px;
+	float: right;
+	position: relative;	
+    color: #0074c4;
+}
+
+.left-chat-box  label , .right-chat-box  label {
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	font-size: 10px;
+	color: #969b9f;
+}
+
 /* ---- End loader ---- */
 @media only screen and (max-width: 768px) {
     
