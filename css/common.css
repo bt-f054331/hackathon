@@ -1,10 +1,14 @@
 * {
-	font-family: "Helvetica Neue",roboto,Arial,sans-serif !important;
+	font-family: "Arial" !important;
 	margin: 0px;
 	padding: 0px;
 	font-weight:300;
 	-webkit-font-smoothing: antialiased;
     outline: none;
+}
+.graph-section img {
+	width: 100%;
+	max-width: 400px;
 }
 a {
 	cursor: pointer;
@@ -184,6 +188,36 @@ a {
 }
 .wlive-upper-border {
 	border-top: 1px solid #ddd;
+}
+.jrney-head {
+	padding: 0px 18px;
+	position: relative;
+}
+.on-off {
+	position: absolute;
+    right: 20px;
+    top: 21px;
+}
+.text-primary {
+	color: #D5002B;
+}
+.text-body {
+	color: #2D373E;
+}
+.text-bold {
+	font-weight:400;
+}
+.icon-mic {
+	background-image: url("../images/Mic.PNG");
+}
+.mic-with-text .icon-mic {
+	position:absolute;
+	top: 3px;
+	left:0px;
+}
+
+.mic-with-text {
+	position: relative;
 }
 /* ---- End loader ---- */
 @media only screen and (max-width: 768px) {

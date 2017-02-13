@@ -1,6 +1,60 @@
-<div class="well" ng-controller="overviewController as overview">
-	<div class="hc-pie hidden-xs" items="wpParent.ideas"></div>
-	<div class="hc-pie-mobile hidden-sm hidden-md hidden-lg" items="wpParent.ideas"></div>
-	<a ui-sref="advise" say-text="{{questions.Landing.q1.audioFile}}">advise</a><br/>
-	<a ui-sref="advise1">advise1</a>
+<div ng-controller="overviewController as overview">
+	<div class="row jrney-head">
+		<h1 class="col-xs-7">Name</h1> 
+		<div class="col-xs-5 text-right">			
+			<div class="on-off">
+			<img class="" src="images/SoundEnabled.PNG"/>
+				<label class="switch">
+					<input type="checkbox" class="switch-input">
+					<span class="switch-text">
+						Turn this setting:
+						<span class="switch-text-off">Off</span>
+						<span class="switch-text-on">On</span>
+					</span>
+				</label>
+			</div>		
+		</div>
+	</div>
+	<div class="well">
+		<div say-text="{{questions.Landing.q1.audioFile}}">
+			<h5 class="text-body">Good Afternoon <span class="text-primary text-bold">Heather</span></h5>
+			<p class="top-margin2-xs">I can see that you and your husband don't have spouse contributions set up for the super he's being paid.</p>
+		</div>
+	</div>
+	
+	<div class="well graph-section">
+		<h5>Your current situation:</h5>
+		<p class="top-margin2-xs text-center">
+			<img src="images/chart.jpg"/>
+		</p>
+		<p class="top-margin2-xs">If you keep going as you are, we estimate your combined super balance in 10 years to be:</p>
+		<p class="top-margin2-xs text-center">
+			<img src="images/chart2.jpg"/>
+		</p>
+		<p class="top-margin2-xs">Now, if Bob was to divert $200 a month to your BT Super for Life account, by doing a "spouse contribution"...</p>
+		<p class="top-margin2-xs text-center">
+			<img src="images/chart3.jpg"/>
+		</p>
+		<p class="top-margin2-xs">In 10 years, your estimated combined super balance could be:</p>
+		<p class="top-margin2-xs text-center">
+			<img src="images/chart4.jpg"/>
+		</p>
+		<p class="top-margin2-xs text-body">An additional <span class="text-primary text-bold">$8,122</span> just for splitting Bob's current contributions - what's his is yours, right?</p>
+		<h5 class="top-margin2-xs text-body"><i>Would you like me to contact Bob and suggest this strategy to him?</i></h5>
+		<div class="text-center top-margin2-xs">
+			<div class="btn-group">
+				<label class="btn-group-item">
+					<input class="btn-group-input" type="radio" name="options2">
+					<span class="btn-group-text btn btn-hero btn-lg">Yes</span>
+				</label>
+				<label class="btn-group-item">
+					<input class="btn-group-input" type="radio" name="options2">
+					<span class="btn-group-text btn btn-hero btn-lg">No</span>
+				</label>
+			</div>
+		</div>
+		<div class="top-margin2-xs mic-with-text">
+			<span class="icon icon-size-sm icon-mic"></span><span> Or just tell me..</span>
+		</div>
+	</div>
 </div>
