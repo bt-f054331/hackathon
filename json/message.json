@@ -18,7 +18,8 @@
 		{
 			"name" : "Wesley",
 			"text" : "Firstly, to save, shift money from your offset account to your personal loan. This could save you $54 a week.",
-			"align" : "left-chat-box"
+			"align" : "left-chat-box",
+			"graph1" : "yes"
 		},
 		{
 			"name" : "Wesley",
@@ -43,7 +44,8 @@
 		{
 			"name" : "Wesley",
 			"text" : "GRAPH - $50 SS per week",
-			"align" : "left-chat-box"
+			"align" : "left-chat-box",
+			"graph2" : "yes"
 		},
 				{
 			"name" : "Heather",
@@ -53,7 +55,8 @@
 		{
 			"name" : "Wesley",
 			"text" : "GRAPH - $100 SS per week",
-			"align" : "left-chat-box"
+			"align" : "left-chat-box",
+			"graph3" : "yes"
 		},
 		{
 			"name" : "Wesley",

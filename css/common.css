@@ -6,7 +6,7 @@
 	-webkit-font-smoothing: antialiased;
     outline: none;
 }
-.graph-section img {
+.graph-section img, .chat-box img {
 	width: 100%;
 	max-width: 400px;
 }

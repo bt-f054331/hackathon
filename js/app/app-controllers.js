@@ -124,6 +124,7 @@ function superController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
 
       if(++i<l) {
           $timeout(iterator, 1000);
+		  $("html, body").animate({ scrollTop: $(document).height() }, 1000);
       }
   })();
 
