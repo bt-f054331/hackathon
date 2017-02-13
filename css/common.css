@@ -234,6 +234,10 @@ a {
     padding: 12px 6px 6px 12px;
 	float: left;
 	position: relative;
+	animation-name: dropLeftBox;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
 }
 
 .right-chat-box {
@@ -246,6 +250,10 @@ a {
 	float: right;
 	position: relative;	
     color: #0074c4;
+	animation-name: dropRightBox;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.6s;
 }
 
 .left-chat-box  label , .right-chat-box  label {
@@ -327,5 +335,22 @@ a {
       	-ms-transform: scale(1);  
 		opacity:0;
 	}
+}
+@keyframes dropLeftBox {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dropRightBox {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 /* end loader key frames */
