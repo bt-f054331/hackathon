@@ -50,7 +50,32 @@ wealthServices.factory( 'wpUtilService', [
           };
           speechSynthesis.speak(speechMessage);
     		};
-
+		
+		
+		var playAudio = function (path) {
+			var loaded = false;
+			var aud = new Audio();
+			 
+			aud.addEventListener('loadeddata', function() 
+			{
+				loaded = true;
+				aud.play();				
+				annyang.abort();
+			}, false);
+			 
+			aud.addEventListener('error' , function() 
+			{
+				alert('error loading audio');
+			}, false);
+			 
+			aud.addEventListener("ended", function(){
+				 aud.currentTime = 0;
+				 console.log("audio ended");
+				 annyang.resume();
+			});
+			aud.src = path;
+		};
+		
         var matcher = function(val, keys) {
           var target = "";
           for (var i = 0; i < keys.length; i++) {
@@ -70,7 +95,8 @@ wealthServices.factory( 'wpUtilService', [
             openModal : openModal,
             closeModal : closeModal,
             matcher : matcher,
-			      sayIt : sayIt
+			sayIt : sayIt,
+			playAudio : playAudio
         };
     }
 ] );
