@@ -1,0 +1,85 @@
+{
+	"messages" : [
+		{
+			"name" : "Wesley",
+			"text" : "Hi Heather, there is a few things I can help with. Save money by moving your balances. Grow your super in a tax effective way. Protect you and your family by looking at your insurance cover.",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "Would you like me to explore these further?",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Heather",
+			"text" : "Sure, show me how.",
+			"align" : "right-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "Firstly, to save, shift money from your offset account to your personal loan. This could save you $54 a week.",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "Would you like to set this up?.",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Heather",
+			"text" : "Sounds great.",
+			"align" : "right-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "OK, that's done.",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "Secondly, to grow your retirement savings and make the most of your pre-taxed earnings, salary sacrifice $50 a week into your super. That could make a difference of $50,000 by the time you retire.",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "GRAPH - $50 SS per week",
+			"align" : "left-chat-box"
+		},
+				{
+			"name" : "Heather",
+			"text" : "OK. What would happen if I sacrificed $100 per week to super?",
+			"align" : "right-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "GRAPH - $100 SS per week",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "Sure, I'll let your employer know you want to set that up.",
+			"align" : "left-chat-box"
+		},
+		{
+			"name" : "Heather",
+			"text" : "Sorry, Wesley - the kids just got home from school. Can we talk about the rest later?",
+			"align" : "right-chat-box"
+		},
+		{
+			"name" : "Wesley",
+			"text" : "No worries. I'll talk to you about in three days. Is that OK?",
+			"align" : "left-chat-box"
+		},		
+		{
+			"name" : "Heather",
+			"text" : "That's perfect. Thanks Wesley. Goodbye.",
+			"align" : "right-chat-box"
+		},			
+		{
+			"name" : "Wesley",
+			"text" : "Goodbye Heather.",
+			"align" : "left-chat-box"
+		}
+		
+	]
+}

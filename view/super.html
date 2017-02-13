@@ -1,13 +1,6 @@
 <div ng-controller="superController">
-<div class="chat-box">
-	<div class="left-chat-box"><label>Wesley</label>fdffdgfd</div>
-	<div class="clear-both"</div>
-	<div class="right-chat-box"><label>Heather</label>fdffdgfd</div>
-	<div class="clear-both"</div>
-	<div class="left-chat-box"><label>Wesley</label>fdffdgfd</div>
-	<div class="clear-both"</div>
-	<div class="right-chat-box"><label>Heather</label>fdffdgfd</div>
-	<div class="clear-both"</div>
-		<div class="right-chat-box" ng-repeat="message in messages"><label>Heather</label>{{message.name}}</div>
-</div>
+	<div class="chat-box" ng-repeat="message in messages">
+		<div class="{{message.align}}"><label>{{message.name}}</label>{{message.text}}</div>
+		<div class="clear-both"</div>
+	</div>
 </div>

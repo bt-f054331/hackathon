@@ -4,6 +4,7 @@ var wealthConstants = angular.module( 'wealthConstants', [] );
 var appconfig = {
 	service : {
         questions : 'json/questions.json',
+		message: 'json/message.json'
     },
     timeouts : {
         initialLoad : 2000,

@@ -25,6 +25,11 @@ function wpAppController ( $scope, $rootScope, $state, $location, $window, $time
   wpDataService.getDataService( appconfig.service.questions ).then( function ( data ) {
         $rootScope.questions = data;
   } );
+  
+  wpDataService.getDataService( appconfig.service.message ).then( function ( data ) {
+        $rootScope.messages = data.messages;
+  } );
+
 
 }
 
@@ -109,26 +114,16 @@ function superController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
   self.q2NegAns = $rootScope.questions.Page1.q2.nAnswers;
 	self.questions = $rootScope.questions;
   $scope.messages = [];
-  $scope.speeches = [];
+  $scope.speeches = $rootScope.messages;
 
   // Pre-populate a no cookie list
-  $scope.messages.push({
-    name: "Sugar"
-  });
-  $scope.speeches.push({
-    name: "flour"
-  });
-  $scope.speeches.push({
-    name: "tea"
-  });
-
   var i = 0, l = $scope.speeches.length;
   (function iterator() {
       console.log($scope.speeches[i].name + "delay");
       $scope.messages.push($scope.speeches[i]);
 
       if(++i<l) {
-          setTimeout(iterator, 400);
+          $timeout(iterator, 1000);
       }
   })();
 
