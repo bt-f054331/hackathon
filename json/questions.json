@@ -4,6 +4,7 @@
 			"text" : "Hi Melinda, How are you?",
 			"voice" : "Hi Melinda, How can I help you today?",
 			"pAnswers" : ["super", "loan", "balance"],
+			"audioFile" : "audio/L-q1.mp3",
 			"nAnswers" : []
 		}
 	},
@@ -11,12 +12,14 @@
 		"q1" : {
 			"text" : "how is your health?",
 			"voice" : "how is your health?",
+			"audioFile" : "audio/P1-q1.mp3",
 			"pAnswers" : ["good", "not bad"],
 			"nAnswers" : ["not good", "cancer", "bad"]
 		},
 		"q2" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
+			"audioFile" : "audio/P1-q2.mp3",
 			"pAnswers" : ["good","improving","improved", "better", "Ok", "Okay", "clear"],
 			"nAnswers" : ["bad", "not good","cancer"]
 		}
@@ -25,18 +28,21 @@
 		"q1" : {
 			"text" : "how are you?",
 			"voice" : "how are you?",
+			"audioFile" : "audio/P2-q1.mp3",
 			"pAnswers" : ["good","not good","cancer"],
 			"nAnswers" : ["good","not good","cancer"]
 		},
 		"q2" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
+			"audioFile" : "audio/P2-q2.mp3",
 			"pAnswers" : ["good","not good","cancer"],
 			"nAnswers" : ["good","not good","cancer"]
 		},
 		"q3" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
+			"audioFile" : "audio/P2-q3.mp3",
 			"pAnswers" : ["good","not good","cancer"],
 			"nAnswers" : ["good","not good","cancer"]
 		}
@@ -45,18 +51,21 @@
 		"q1" : {
 			"text" : "how are you?",
 			"voice" : "how are you?",
+			"audioFile" : "audio/P3-q1.mp3",
 			"pAnswers" : ["good","not good","cancer"],
 			"nAnswers" : ["good","not good","cancer"]
 		},
 		"q2" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
+			"audioFile" : "audio/P3-q2.mp3",
 			"pAnswers" : ["good","not good","cancer"],
 			"nAnswers" : ["good","not good","cancer"]
 		},
 		"q3" : {
 			"text" : "what is the status now?",
 			"voice" : "what is the status now?",
+			"audioFile" : "audio/P3-q3.mp3",
 			"pAnswers" : ["good","not good","cancer"],
 			"nAnswers" : ["good","not good","cancer"]
 		}

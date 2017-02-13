@@ -54,8 +54,9 @@ wealthServices.factory( 'wpUtilService', [
 		
 		var playAudio = function (path) {
 			var loaded = false;
-			var aud = new Audio();
-			 
+			console.log(path);
+			var aud = new Audio(path);
+			//aud.play();
 			aud.addEventListener('loadeddata', function() 
 			{
 				loaded = true;
@@ -73,7 +74,7 @@ wealthServices.factory( 'wpUtilService', [
 				 console.log("audio ended");
 				 annyang.resume();
 			});
-			aud.src = path;
+			//aud.src = path;
 		};
 		
         var matcher = function(val, keys) {
