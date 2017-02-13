@@ -37,7 +37,7 @@ wealthRouter.config( [
               onExit: function() {
                 annyang.removeCallback();
               }
-          } ).state( 'j1', {
+          } ).state( 'journey', {
                 url : '/wlive/:target',
                 views : {
                     header : header,
@@ -45,11 +45,20 @@ wealthRouter.config( [
                         templateUrl : 'view/wlive.html'
                     },
                     footer : footer
+                }
+          } ).state( 'demo', {
+                url : '/super/:target',
+                views : {
+                    header : header,
+                    body : {
+                        templateUrl : 'view/super.html'
+                    },
+                    footer : footer
                 },
-  			        onEnter: function(){
+                onEnter: function(){
                   annyang.debug();
                   annyang.start();
-  			        },
+                },
                 onExit: function() {
                   annyang.removeCallback();
                 }

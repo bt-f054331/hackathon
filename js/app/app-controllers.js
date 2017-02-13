@@ -91,12 +91,13 @@ function overviewController ( $scope, $rootScope, wpDataService, wpUtilService, 
 }
 
 superController.$inject = [
-    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig'
+    '$scope', '$rootScope', 'wpDataService', 'wpUtilService', '$window', '$location', '$timeout', '$state', 'appconfig', '$stateParams'
 ];
 
-function superController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig ) {
+function superController ( $scope, $rootScope, wpDataService, wpUtilService, $window, $location, $timeout, $state, appconfig, $stateParams ) {
 	console.log($rootScope.questions);
 	var self = this;
+  self.isDemo = $stateParams.target === 'demo'
   self.q2Enabled = false;
   self.q1Ans = "";
   self.q2Ans = "";
@@ -105,6 +106,29 @@ function superController ( $scope, $rootScope, wpDataService, wpUtilService, $wi
   self.q2PosAns = $rootScope.questions.Page1.q2.pAnswers;
   self.q2NegAns = $rootScope.questions.Page1.q2.nAnswers;
 	self.questions = $rootScope.questions;
+  $scope.messages = [];
+  $scope.speeches = [];
+
+  // Pre-populate a no cookie list
+  $scope.messages.push({
+    name: "Sugar"
+  });
+  $scope.speeches.push({
+    name: "flour"
+  });
+  $scope.speeches.push({
+    name: "tea"
+  });
+
+  var i = 0, l = $scope.speeches.length;
+  (function iterator() {
+      console.log($scope.speeches[i].name + "delay");
+      $scope.messages.push($scope.speeches[i]);
+
+      if(++i<l) {
+          setTimeout(iterator, 400);
+      }
+  })();
 
   self.executeQ1 = function(vals, keys) {
     var target = "";
