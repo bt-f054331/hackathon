@@ -50,33 +50,35 @@ wealthServices.factory( 'wpUtilService', [
           };
           speechSynthesis.speak(speechMessage);
     		};
-		
-		
+
+        var broadcastEndVideo = function () {
+                $rootScope.$broadcast( 'onEndVideo' );
+        };
+
 		var playAudio = function (path) {
 			var loaded = false;
 			console.log(path);
 			var aud = new Audio(path);
 			//aud.play();
-			aud.addEventListener('loadeddata', function() 
+			aud.addEventListener('loadeddata', function()
 			{
 				loaded = true;
-				aud.play();				
-				annyang.abort();
+				aud.play();
 			}, false);
-			 
-			aud.addEventListener('error' , function() 
+
+			aud.addEventListener('error' , function()
 			{
 				alert('error loading audio');
 			}, false);
-			 
+
 			aud.addEventListener("ended", function(){
 				 aud.currentTime = 0;
+         $timeout(broadcastEndVideo, 50);
 				 console.log("audio ended");
-				 annyang.resume();
 			});
 			//aud.src = path;
 		};
-		
+
         var matcher = function(val, keys) {
           var target = "";
           for (var i = 0; i < keys.length; i++) {

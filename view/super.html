@@ -1,22 +1,6 @@
-<div ng-controller="superController">
+<div ng-controller="superController" >
 	<div class="chat-box" ng-repeat="message in messages">
-		<div class="{{message.align}}"><label>{{message.name}}</label>{{message.text}}
-			<div ng-if="message.graph1">
-				<p class="top-margin2-xs">
-					<img src="images/Transfer.PNG" />
-				</p>
-			</div>
-			<div ng-if="message.graph2">
-				<p class="top-margin2-xs">
-					<img src="images/Graph1.PNG" />
-				</p>
-			</div>
-			<div ng-if="message.graph3">
-				<p class="top-margin2-xs">
-					<img src="images/Graph2.PNG" />
-				</p>
-			</div>
-		</div>
+		<div class="{{message.align}}" ><label>{{message.name}}</label>{{message.text}}</div>
 		<div class="clear-both"</div>
 	</div>
 </div>
