@@ -14,7 +14,7 @@ function SayTextDirective(wpUtilService) {
       link: function(scope, element, attrs, $state) {
         attrs.$observe('sayText', function(value){
           console.log("attr", value);
-          wpUtilService.playAudio(value);
+          wpUtilService.sayIt(value);
         });
       }
   }

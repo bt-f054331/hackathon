@@ -1,12 +1,15 @@
 <header>
 	<div id="app-header" class="bt-logo-header row header-dt">
-		<div class="col-sm-5 col-xs-4 wbc-logo">
+		<div class="col-sm-1 col-xs-2 back-btn-box">
+		      <a class="back" role="link" aria-label="Back" ng-model="backUrl" role="link" page-name="signout" return-url="rtnHome" ></a>
+		</div>
+		<div class="col-sm-4 col-xs-3 wbc-logo">
 			<span class="iconbox-item symbol symbol-logo-tablet hidden-xs analytics-experience-desktop" title="westpac"></span>
 			<span class="iconbox-item symbol symbol-logo-phone hidden-sm hidden-md hidden-lg analytics-experience-mobile top-margin2-xs" title="westpac"></span>
 		</div>
 		<div class="col-sm-7 col-xs-7 bt-logo">
 			<div class="iconbox-item symbol symbol-bt-logo" title="BT Financial Group"><span class="sr-only" aria-hidden="false">BT Financial Group</span></div>
-			<div class="btn-signout-box" ng-class="{'ng-hide': stateIsLoading}" ><button id="signoutBtnId" class="btn btn-soft btn-primary btn-signout btn-sm" role="button">Sign out</button></div>
+			<div class="btn-signout-box" ng-class="{'ng-hide': stateIsLoading}" ><button id="signoutBtnId" class="btn btn-soft btn-signout btn-sm" role="button">Sign out</button></div>
 		</div>
 	</div>
 </header>

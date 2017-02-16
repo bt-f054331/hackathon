@@ -1,14 +1,10 @@
 * {
-	font-family: "Arial" !important;
+	font-family: "Helvetica Neue",roboto,Arial,sans-serif !important;
 	margin: 0px;
 	padding: 0px;
 	font-weight:300;
 	-webkit-font-smoothing: antialiased;
     outline: none;
-}
-.graph-section img, .chat-box img {
-	width: 100%;
-	max-width: 400px;
 }
 a {
 	cursor: pointer;
@@ -180,89 +176,6 @@ a {
 .well textarea {
 	width: 100%;
 }
-.wlive-container,.wlive-link {
-	margin: 18px;
-}
-.wlive-link {
-	cursor: pointer;
-}
-.wlive-upper-border {
-	border-top: 1px solid #ddd;
-}
-.jrney-head {
-	padding: 0px 18px;
-	position: relative;
-}
-.on-off {
-	position: absolute;
-    right: 20px;
-    top: 21px;
-}
-.text-primary {
-	color: #D5002B;
-}
-.text-body {
-	color: #2D373E;
-}
-.text-bold {
-	font-weight:400;
-}
-.icon-mic {
-	background-image: url("../images/Mic.PNG");
-}
-.mic-with-text .icon-mic {
-	position:absolute;
-	top: 3px;
-	left:0px;
-}
-.mic-with-text {
-	position: relative;
-}
-.chat-box {
-	margin-bottom: 18px;
-}
-.chat-box div{
-	clear: both;
-}
-
-.left-chat-box {
-	margin: 18px 18px 0px 18px;
-    width: 70%;
-    background-color: #fff;
-    border: 1px solid #D7D2CB;
-    border-radius: 3px;
-    padding: 12px 6px 6px 12px;
-	float: left;
-	position: relative;
-	animation-name: dropLeftBox;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-duration: 0.6s;
-}
-
-.right-chat-box {
-	margin: 18px 18px 0px 18px;
-    width: 70%;
-    background-color: #f2f8fc;
-    border: 1px solid #80bae2;
-    border-radius: 3px;
-    padding: 12px 6px 6px 12px;
-	float: right;
-	position: relative;	
-    color: #0074c4;
-	animation-name: dropRightBox;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-duration: 0.6s;
-}
-
-.left-chat-box  label , .right-chat-box  label {
-	position: absolute;
-	top: 0px;
-	left: 3px;
-	font-size: 10px;
-	color: #969b9f;
-}
 
 /* ---- End loader ---- */
 @media only screen and (max-width: 768px) {
@@ -335,22 +248,5 @@ a {
       	-ms-transform: scale(1);  
 		opacity:0;
 	}
-}
-@keyframes dropLeftBox {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes dropRightBox {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
 }
 /* end loader key frames */

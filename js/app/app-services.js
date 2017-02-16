@@ -51,34 +51,6 @@ wealthServices.factory( 'wpUtilService', [
           speechSynthesis.speak(speechMessage);
     		};
 
-        var broadcastEndVideo = function () {
-                $rootScope.$broadcast( 'onEndVideo' );
-        };
-
-		var playAudio = function (path) {
-			var loaded = false;
-			console.log(path);
-			var aud = new Audio(path);
-			//aud.play();
-			aud.addEventListener('loadeddata', function()
-			{
-				loaded = true;
-				aud.play();
-			}, false);
-
-			aud.addEventListener('error' , function()
-			{
-				alert('error loading audio');
-			}, false);
-
-			aud.addEventListener("ended", function(){
-				 aud.currentTime = 0;
-         $timeout(broadcastEndVideo, 50);
-				 console.log("audio ended");
-			});
-			//aud.src = path;
-		};
-
         var matcher = function(val, keys) {
           var target = "";
           for (var i = 0; i < keys.length; i++) {
@@ -98,8 +70,7 @@ wealthServices.factory( 'wpUtilService', [
             openModal : openModal,
             closeModal : closeModal,
             matcher : matcher,
-			sayIt : sayIt,
-			playAudio : playAudio
+			      sayIt : sayIt
         };
     }
 ] );

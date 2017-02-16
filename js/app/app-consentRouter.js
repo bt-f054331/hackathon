@@ -17,38 +17,18 @@ wealthRouter.config( [
             views : {
                 header : header,
                 body : {
-                    templateUrl : 'view/wlive.html'
+                    templateUrl : 'view/home.html'
                 },
                 footer : footer
+            },
+            onEnter: function(){
+                annyang.debug();
+                annyang.start();
+            },
+            onExit: function() {
+              annyang.removeCallback();
             }
-          } ).state( 'advisor', {
-              url : '/advisor',
-              views : {
-                  header : header,
-                  body : {
-                      templateUrl : 'view/home.html'
-                  },
-                  footer : footer
-              }
-          } ).state( 'journey', {
-                url : '/wlive/:target',
-                views : {
-                    header : header,
-                    body : {
-                        templateUrl : 'view/wlive.html'
-                    },
-                    footer : footer
-                }
-          } ).state( 'demo', {
-                url : '/super/:target',
-                views : {
-                    header : header,
-                    body : {
-                        templateUrl : 'view/super.html'
-                    },
-                    footer : footer
-                }
-        } ).state( 'super', {
+          } ).state( 'super', {
               url : '/super',
               views : {
                   header : header,
@@ -56,6 +36,9 @@ wealthRouter.config( [
                       templateUrl : 'view/super.html'
                   },
                   footer : footer
+              },
+              onExit: function() {
+                annyang.removeCallback();
               }
         } ).state( 'advise', {
             url : '/advise',
@@ -74,6 +57,9 @@ wealthRouter.config( [
                     templateUrl : 'view/financeAdvise1.html'
                 },
                 footer : footer
+            },
+            onExit: function() {
+              annyang.removeCallback();
             }
         } );
     }

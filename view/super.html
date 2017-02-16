@@ -1,6 +1,10 @@
-<div ng-controller="superController" >
-	<div class="chat-box" ng-repeat="message in messages">
-		<div class="{{message.align}}" ><label>{{message.name}}</label>{{message.text}}</div>
-		<div class="clear-both"</div>
+<div class="well" ng-controller="superController as super">
+	<div class="form-group">
+		<label for="superQuestion1" say-text="{{questions.Page1.q1.voice}}">{{questions.Page1.q1.text}}</label><br/>
+		<textarea id="superAnswer1" ng-model="super.q1Ans"></textarea>
+	</div>
+	<div class="form-group" ng-if="super.q2Enabled">
+		<label for="superQuestion2" say-text="{{questions.Page1.q2.voice}}">{{questions.Page1.q2.text}}</label><br/>
+		<textarea id="superAnswer2" ng-model="super.q2Ans"></textarea>
 	</div>
 </div>
